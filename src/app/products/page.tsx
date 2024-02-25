@@ -6,12 +6,16 @@ import { buttons } from '@/constant/nameButton';
 import { getProducts } from '@/api/api';
 import { Catalogo } from '@/types/apiproducts';
 import Search from '@/components/Search/Search';
+import Card from '@/components/Card/Card';
+import SkeletonCard from '@/components/Skeleton/Skeleton';
 
 type StateData = Catalogo[];
 
 export default function Products() {
   const [data, setData] = useState<StateData | null>(null);
-  console.log(data);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const skeleton = new Array(20).fill(null);
 
   useEffect(() => {
     const abort = new AbortController();
@@ -19,6 +23,7 @@ export default function Products() {
     const products = async () => {
       const response = await getProducts(signal);
       if (response) {
+        setIsLoading(false);
         setData(response);
       }
     };
@@ -45,6 +50,37 @@ export default function Products() {
             ))}
             <CiMenuKebab className='w-6 h-6 hover:cursor-pointer' />
           </div>
+
+          {isLoading ? (
+            <>
+              <h3 className='py-4 text-center font-light'>Loading...</h3>
+              <ul className='py-8 grid justify-center flex-wrap grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4'>
+                {skeleton.map((_, index) => (
+                  <li
+                    key={index}
+                    className='inline-flex justify-center xl:justify-center'
+                  >
+                    <SkeletonCard />
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <ul className='py-8 grid justify-center flex-wrap grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4'>
+              {data?.map((item) => (
+                <li
+                  key={item.id}
+                  className='inline-flex justify-center xl:justify-center'
+                >
+                  <Card
+                    title={item.title}
+                    img={item.image}
+                    price={item.price}
+                  />
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       </div>
     </main>
