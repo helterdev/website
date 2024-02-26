@@ -1,3 +1,4 @@
+import { SlNote } from 'react-icons/sl';
 export const buttons = [
   {
     label: 'All Categories',
