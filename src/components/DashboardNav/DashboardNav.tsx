@@ -56,6 +56,7 @@ const DashboardNav = () => {
           </li>
         ))}
       </ul>
+      {/* mobile */}
       <div className='sm:hidden'>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
