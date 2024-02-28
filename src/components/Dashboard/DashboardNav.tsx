@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import Sidebar from '@/components/Sidebar/Sidebar';
 
 const Dbuttons = [
   {
@@ -36,13 +37,19 @@ const Dbuttons = [
   },
 ];
 
+const SideButton = () => {
+  return (
+    <button type='button'>
+      <RxHamburgerMenu className='w-6 h-6' />
+    </button>
+  );
+};
+
 const DashboardNav = () => {
   return (
     <nav className='py-6 w-4/5 m-auto flex justify-between items-center sm:gap-14 lg:gap-0'>
       <div className='flex lg:w-[30%]'>
-        <button type='button'>
-          <RxHamburgerMenu className='w-6 h-6' />
-        </button>
+        <Sidebar side={'left'} element={<SideButton />} />
       </div>
       <ul className='hidden sm:flex sm:flex-1  sm:gap-3 lg:justify-end'>
         {Dbuttons.map((item) => (

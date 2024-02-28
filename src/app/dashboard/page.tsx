@@ -21,7 +21,6 @@ import ModalButton from '@/components/Dashboard/ModalButton/ModalButton';
 
 export default function Dashboard() {
   const rows = new Array(9).fill(null);
-  const row2 = new Array(4).fill(null);
   return (
     <main>
       <div>
@@ -53,7 +52,7 @@ export default function Dashboard() {
                         <FiEdit className='flex w-4 h-4 hover:cursor-pointer' />
                       </TableCell>
                       <TableCell className='font-medium'>INV001</TableCell>
-                      <TableCell>Paid</TableCell>
+                      <TableCell>hola</TableCell>
                       <TableCell className='flex gap-2 items-center'>
                         <button
                           className='text-sm bg-[#84919c] w-5 h-5
@@ -85,12 +84,24 @@ export default function Dashboard() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {row2.map((_, index) => (
-                      <TableRow key={index}>
-                        <TableCell>Paid</TableCell>
-                        <TableCell className='text-end'>$100</TableCell>
-                      </TableRow>
-                    ))}
+                    <TableRow>
+                      <TableCell className=' text-xs'>Sub Total</TableCell>
+                      <TableCell className='text-end'>$100</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className=' text-xs'>Tax</TableCell>
+                      <TableCell className='text-end'>$100</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='text-xs'>Shipping</TableCell>
+                      <TableCell className='text-end'>$100</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className=' text-xs text-[#4f85dd]'>
+                        Discounton Cart
+                      </TableCell>
+                      <TableCell className='text-end'>$100</TableCell>
+                    </TableRow>
                   </TableBody>
                 </Table>
               </div>

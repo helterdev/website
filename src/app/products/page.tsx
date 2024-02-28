@@ -8,6 +8,7 @@ import { Catalogo } from '@/types/apiproducts';
 import Search from '@/components/Search/Search';
 import Card from '@/components/Card/Card';
 import SkeletonCard from '@/components/Skeleton/Skeleton';
+import Sidebar from '@/components/Sidebar/Sidebar';
 
 type StateData = Catalogo[];
 
@@ -48,7 +49,10 @@ export default function Products() {
                 {item.label}
               </Button>
             ))}
-            <CiMenuKebab className='w-6 h-6 hover:cursor-pointer' />
+            <Sidebar
+              side={'right'}
+              element={<CiMenuKebab className='w-6 h-6 hover:cursor-pointer' />}
+            />
           </div>
 
           {isLoading ? (
