@@ -1,4 +1,3 @@
-'use client';
 import {
   Table,
   TableBody,
@@ -12,12 +11,13 @@ import { FiEdit } from 'react-icons/fi';
 import { IoTrashOutline } from 'react-icons/io5';
 import { MdOutlineCancel } from 'react-icons/md';
 import { FaRegHandRock } from 'react-icons/fa';
-import { GiReceiveMoney } from 'react-icons/gi';
+
 import { FaHandHoldingDollar } from 'react-icons/fa6';
 
 import DashboardNav from '@/components/Dashboard/DashboardNav';
 import NavInput from '@/components/Dashboard/NavInput/NavInput';
 import { Button } from '@/components/ui/button';
+import ModalButton from '@/components/Dashboard/ModalButton/ModalButton';
 
 export default function Dashboard() {
   const rows = new Array(9).fill(null);
@@ -117,10 +117,7 @@ export default function Dashboard() {
                 <FaHandHoldingDollar fill='#5c6ac4' />
                 Discount
               </Button>
-              <Button className='flex flex-1 gap-2 items-center bg-[#e1eaf9] text-[#3674d9]'>
-                <GiReceiveMoney fill='#3674d9' />
-                Pay Now
-              </Button>
+              <ModalButton />
             </div>
           </div>
         </section>

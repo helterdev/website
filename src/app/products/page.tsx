@@ -34,9 +34,9 @@ export default function Products() {
 
   return (
     <main>
-      <div>
+      <div className='bg-gray-300'>
         <Search />
-        <section className='py-4 bg-gray-300 '>
+        <section className='py-4  '>
           <div className='flex flex-wrap justify-center items-center gap-2'>
             {buttons.map((item) => (
               <Button
