@@ -18,7 +18,7 @@ const Sidebar = ({ side, element }: Props) => {
   return (
     <Sheet>
       <SheetTrigger asChild>{element}</SheetTrigger>
-      <SheetContent side={side}>
+      <SheetContent side={side} className='w-[250px]'>
         <SheetHeader>
           <SheetTitle></SheetTitle>
           <SheetDescription></SheetDescription>

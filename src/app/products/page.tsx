@@ -1,21 +1,18 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, forwardRef, HTMLAttributes } from 'react';
 import { Button } from '@/components/ui/button';
 import { CiMenuKebab } from 'react-icons/ci';
 import { buttons } from '@/constant/nameButton';
 import { getProducts } from '@/api/api';
-import { Catalogo } from '@/types/apiproducts';
 import Search from '@/components/Search/Search';
 import Card from '@/components/Card/Card';
 import SkeletonCard from '@/components/Skeleton/Skeleton';
 import Sidebar from '@/components/Sidebar/Sidebar';
+import { useStateData } from '@/context/StateContext';
 
-type StateData = Catalogo[];
-
-export default function Products() {
-  const [data, setData] = useState<StateData | null>(null);
+const Products = () => {
+  const { state: data, setData } = useStateData();
   const [isLoading, setIsLoading] = useState(true);
-
   const skeleton = new Array(20).fill(null);
 
   useEffect(() => {
@@ -31,10 +28,10 @@ export default function Products() {
     products();
 
     return () => abort.abort();
-  }, []);
+  }, [setData]);
 
   return (
-    <main>
+    <div>
       <div className='bg-gray-300'>
         <Search />
         <section className='py-4  '>
@@ -80,6 +77,7 @@ export default function Products() {
                     title={item.title}
                     img={item.image}
                     price={item.price}
+                    id={item.id}
                   />
                 </li>
               ))}
@@ -87,6 +85,8 @@ export default function Products() {
           )}
         </section>
       </div>
-    </main>
+    </div>
   );
-}
+};
+
+export default Products;

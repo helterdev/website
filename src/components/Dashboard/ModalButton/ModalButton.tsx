@@ -32,22 +32,25 @@ const ModalButton = () => {
             <span className='font-light text-sm'>Order Amounth</span>
             <span>$5005.05</span>
           </DialogTitle>
-          <div className='rounded border h-[500px] flex'>
-            <div className='w-1/4 h-full flex flex-col pt-4 text-[#637381] border-r'>
-              <span className='flex items-center gap-3 py-3 pl-2 text-sm'>
+          <div className='rounded border flex lg:min-h-[500px]'>
+            <div className='w-1/4 h-full flex flex-col pt-4 text-[#637381] border-r '>
+              <span className='flex items-center  py-3 text-xs sm:gap-1 sm:pl-1'>
                 <BsCashCoin /> Cash
               </span>
-              <span className='flex items-center gap-3 py-3 pl-2 text-sm bg-[#eef0f9] text-[#5c6ac4]'>
+              <span className='flex items-center  py-3 text-xs bg-[#eef0f9] text-[#5c6ac4] sm:gap-1 sm:pl-1'>
                 <CiCreditCard1 color='#5c6ac4' /> Card
               </span>
-              <span className='flex items-center gap-3 py-3 pl-2 text-sm'>
+              <span className='flex items-center  py-3 text-xs sm:gap-1 sm:pl-1'>
                 <RiAccountCircleLine /> On Account
               </span>
-              <span className='flex items-center gap-3 py-3 pl-2 text-sm'>
+              <span className='flex items-center  py-3 text-xs sm:gap-1 sm:pl-1'>
                 <CiCreditCard1 /> Checque
               </span>
             </div>
-            <form action='' className='p-8 flex flex-col justify-between'>
+            <form
+              action=''
+              className='flex-1 box-border sm:p-4 lg:flex lg:flex-col lg:justify-between'
+            >
               <div>
                 <div className='h-8 my-4'>
                   <input
@@ -78,17 +81,17 @@ const ModalButton = () => {
                   />
                 </div>
               </div>
-              <div className='my-4 flex gap-2 box-border'>
+              <div className='mt-4 flex flex-col gap-1 box-border sm:flex-row'>
                 <Button
                   type='button'
-                  className='rounded bg-[#fadedd] text-[#e55c57]  font-normal flex items-center gap-3'
+                  className='rounded bg-[#fadedd] text-[#e55c57] order-2 font-normal flex items-center gap-3 sm:order-1'
                 >
                   <MdOutlineCancel fill='#e55c57' />
                   Cancel
                 </Button>
                 <Button
                   type='button'
-                  className='rounded bg-[#3674d9]  font-normal flex items-center gap-3 flex-1'
+                  className='rounded bg-[#3674d9] order-1 font-normal flex items-center gap-3 flex-1 sm:order-2'
                 >
                   <FaHandHoldingDollar />
                   Complete Payment
