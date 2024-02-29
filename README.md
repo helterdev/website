@@ -1,7 +1,7 @@
 
 # 🏪 Website
 
-Intialiazed the pos app.
+Finished the app.
 
 ## License
 
