@@ -1,5 +1,6 @@
 'use client';
-import { useEffect, useState, forwardRef, HTMLAttributes } from 'react';
+import { useEffect, useState } from 'react';
+import { Toaster } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { CiMenuKebab } from 'react-icons/ci';
 import { buttons } from '@/constant/nameButton';
@@ -32,6 +33,7 @@ const Products = () => {
 
   return (
     <div>
+      <Toaster />
       <div className='bg-gray-300'>
         <Search />
         <section className='py-4  '>
@@ -46,10 +48,10 @@ const Products = () => {
                 {item.label}
               </Button>
             ))}
-            <Sidebar
+            {/* <Sidebar
               side={'right'}
               element={<CiMenuKebab className='w-6 h-6 hover:cursor-pointer' />}
-            />
+            /> */}
           </div>
 
           {isLoading ? (

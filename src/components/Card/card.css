@@ -80,4 +80,8 @@
     border: 1px solid #ffcaa6;
     background-color: #ffcaa6;
    }
+
+   .card-button:active {
+    background-color: #fdae79;
+   }
    

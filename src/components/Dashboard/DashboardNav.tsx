@@ -49,7 +49,7 @@ const DashboardNav = () => {
   return (
     <nav className='py-6 w-4/5 m-auto flex justify-between items-center sm:gap-14 lg:gap-0'>
       <div className='flex lg:w-[30%]'>
-        <Sidebar side={'left'} element={<SideButton />} />
+        {/* <Sidebar side={'left'} element={<SideButton />} /> */}
       </div>
       <ul className='hidden sm:flex sm:flex-1  sm:gap-3 lg:justify-end'>
         {Dbuttons.map((item) => (
